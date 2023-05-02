@@ -5,17 +5,25 @@ body {
 }
 .App {
   text-align: center; 
-  height: 550px;    
+  height: 800px; 
+  max-width: 800px;   
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto; 
 }
 
 .App-header {  
-  min-height: 10%;  
+  /* min-height: 10%;   */
   /* display: flex; */
   /* flex-direction: column; */
   /* align-items: center; */
   /* justify-content: center; */
   font-size: calc(14px + 2vmin);
   color: #61dafb;
+  border: #61dafb solid 2px;
+  border-radius: 20px;
+  margin-top:20px;
 }
 
 .App-link {
@@ -24,7 +32,7 @@ body {
 
 .Section {  
   font-size: calc(10px + 2vmin); 
-  min-height: 50%;      
+  /* min-height: 50%;       */
 }
 .quote {
   background-color: #8199A3;
@@ -59,9 +67,99 @@ li {
   border-radius: 10px;  
   margin: 15px;  
   text-align: center;  
+  font-weight: 500;
 }
 
 .Footer {
   min-height: 10%;
   color: #61dafb;
 }
+.icons {
+  display: flex;
+  justify-content: space-evenly;  
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;    
+}
+
+img{
+  width: 50px;  
+}
+
+img:hover {
+  transform: rotate(25deg);
+  transition-duration: 300ms; 
+}
+
+
+
+@media screen and (min-width: 321px) and (max-width: 767px) {
+  .App {        
+    max-width: 600px;       
+  }
+  
+  .App-header {      
+    font-size: calc(12px + 2vmin);    
+    margin-top:10px;
+  }
+  
+  .Section {  
+    font-size: calc(10px + 1vmin);    
+  }
+  .quote {    
+    margin: 10px;
+    border-radius: 5px;
+  }  
+  
+  h2 {   
+    padding: 5px;    
+    margin: 13px;
+    border-radius: 10px;    
+  }
+ 
+  li {    
+    background-color: #8199A3;
+    border-radius: 10px;  
+    margin: 10px;      
+  }   
+  
+  img{
+    width: 30px;  
+  }
+}
+
+
+
+@media screen and  (max-width: 320px) {
+  .App {        
+    max-width: 600px;       
+  }
+  
+  .App-header {      
+    font-size: 16px;    
+    margin-top:10px;
+  }
+  
+  .Section {  
+    font-size: 14px;    
+  }
+  .quote {    
+    margin: 7px;
+    border-radius: 5px;
+  }  
+  
+  h2 {   
+    padding: 2px;    
+    margin: 7px;      
+  }    
+  
+  .icons {    
+    max-width: 80%;      
+  }
+
+  img{
+    width: 25px;  
+  }
+}
+
+
