@@ -21,22 +21,24 @@ function Section() {
     function deleteFav(id){        
         favs = favs.filter((fa)=> fa.id !==  id)
         setFavs(favs)
-    }
-    console.log(favs)
+    }    
     return(
         <>
             <div className="Section">
-            <h2>Section</h2>
-            <div>{message.activity}</div>
+            <h2>Quote</h2>
+            <div className="quote">{message.activity}</div>
             <button onClick={takeActivity}>Показать ещё </button>                
             <button onClick={toFavorite}>Добавить в избранное </button>
             <h2>Избранное</h2>
-            <ul>{                    
-                  favs.map(f => <li id={f.id}>{f.activity}
-                                    <button onClick={()=> deleteFav(f.id)}>x</button>
-                                </li>)                     
-                }
-            </ul>
+            <div className="favorite">
+                <ul>{                    
+                    favs.map(f => <li id={f.id}>{f.activity}
+                                        <button onClick={()=> deleteFav(f.id)}>x</button>
+                                    </li>)                     
+                    }
+                </ul>
+            </div>
+            
             </div>            
         </>
     )
