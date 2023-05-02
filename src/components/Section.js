@@ -4,43 +4,37 @@ function Section() {
     function takeActivity(){
         fetch("http://www.boredapi.com/api/activity/")
         .then((res) => res.json())
-        .then((data) => setMessage([data.key, data.activity ]))    
-        // .then((data) => setKey(data.key)) 
+        .then((data) => setMessage({id:data.key, activity:data.activity}))            
     }
     
-    const [message, setMessage] = useState([])
-    // const [key, setKey] = useState("")
-    
+    const [message, setMessage] = useState({})
 
     useEffect(() => {takeActivity()}, [])
 
-    let [favs, setFavs] = useState([])
-    // let [keys, setKeys] = useState([])
+    let [favs, setFavs] = useState([])    
 
     function toFavorite() {
-        favs = [...favs, message]
-        // console.log(favs)
-        // favs = favs.filter((fa)=> fa[0] !==  "9999999")
+        favs = [...favs, message]        
         setFavs(favs)
     }
 
-    function deleteFav(id){
-        // alert(id)
-        favs = favs.filter((fa)=> fa[0] !==  id)
+    function deleteFav(id){        
+        favs = favs.filter((fa)=> fa.id !==  id)
         setFavs(favs)
     }
-
-
+    console.log(favs)
     return(
         <>
             <div className="Section">
             <h2>Section</h2>
-            <div>{message[1]}</div>
+            <div>{message.activity}</div>
             <button onClick={takeActivity}>Показать ещё </button>                
             <button onClick={toFavorite}>Добавить в избранное </button>
             <h2>Избранное</h2>
             <ul>{                    
-                  favs.map(f => <li id={f[0]}>{f[1]}<button onClick={()=> deleteFav(f[0])}>x</button></li>)                     
+                  favs.map(f => <li id={f.id}>{f.activity}
+                                    <button onClick={()=> deleteFav(f.id)}>x</button>
+                                </li>)                     
                 }
             </ul>
             </div>            
