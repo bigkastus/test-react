@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 
 function Section() {
+
     function takeActivity(){
-        fetch("http://www.boredapi.com/api/activity/")
+        fetch("https://api.chucknorris.io/jokes/random")
         .then((res) => res.json())
-        .then((data) => setMessage({id:data.key, activity:data.activity}))            
+        .then((data) => setMessage({id:data.id, value:data.value}))            
     }
     
-    const [message, setMessage] = useState({})
-
+    const [message, setMessage] = useState({})    
+    
     useEffect(() => {takeActivity()}, [])
 
     let [favs, setFavs] = useState([])    
@@ -26,13 +27,13 @@ function Section() {
         <>
             <div className="Section">
                 <h2>Quote</h2>
-                <div className="quote">{message.activity}</div>
+                <div className="quote">{message.value}</div>
                 <button onClick={takeActivity}>Показать ещё </button>                
                 <button onClick={toFavorite}>Добавить в избранное </button>
                 <h2>Избранное</h2>
                 <div className="favorite">
                     <ul>{                    
-                        favs.map(f => <li id={f.id}>{f.activity}
+                        favs.map(f => <li id={f.id}>{f.value}
                                             <button onClick={()=> deleteFav(f.id)}>x</button>
                                         </li>)                     
                         }
