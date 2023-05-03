@@ -25,20 +25,19 @@ function Section() {
     return(
         <>
             <div className="Section">
-            <h2>Quote</h2>
-            <div className="quote">{message.activity}</div>
-            <button onClick={takeActivity}>Показать ещё </button>                
-            <button onClick={toFavorite}>Добавить в избранное </button>
-            <h2>Избранное</h2>
-            <div className="favorite">
-                <ul>{                    
-                    favs.map(f => <li id={f.id}>{f.activity}
-                                        <button onClick={()=> deleteFav(f.id)}>x</button>
-                                    </li>)                     
-                    }
-                </ul>
-            </div>
-            
+                <h2>Quote</h2>
+                <div className="quote">{message.activity}</div>
+                <button onClick={takeActivity}>Показать ещё </button>                
+                <button onClick={toFavorite}>Добавить в избранное </button>
+                <h2>Избранное</h2>
+                <div className="favorite">
+                    <ul>{                    
+                        favs.map(f => <li id={f.id}>{f.activity}
+                                            <button onClick={()=> deleteFav(f.id)}>x</button>
+                                        </li>)                     
+                        }
+                    </ul>
+                </div>            
             </div>            
         </>
     )

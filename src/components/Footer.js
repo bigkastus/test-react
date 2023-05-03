@@ -9,22 +9,25 @@ function Footer() {
         <footer className="Footer">        
             <h2>Footer</h2>
                 <div className="icons">
-                <a href="https://">
-                    <img src={youtubeIcon} alt="fb-icon"/>
-                </a>
-                <a href="https://">
-                    <img src={fbIcon} alt="fb-icon"/>
-                </a>
-                <a href="https://">
-                    <img src={watsAppIcon} alt="fb-icon"/>
-                </a>
-                <a href="https://">
-                    <img src={tgIcon} alt="fb-icon"/>
-                </a>
-                <a href="https://">
-                    <img src={instaIcon} alt="fb-icon"/>
-                </a>
-            </div>
+                    <a href="https://">
+                        <img src={youtubeIcon} alt="fb-icon"/>
+                    </a>
+                    <a href="https://">
+                        <img src={fbIcon} alt="fb-icon"/>
+                    </a>
+                    <a href="https://">
+                        <img src={watsAppIcon} alt="fb-icon"/>
+                    </a>
+                    <a href="https://">
+                        <img src={tgIcon} alt="fb-icon"/>
+                    </a>
+                    <a href="https://">
+                        <img src={instaIcon} alt="fb-icon"/>
+                    </a>
+                 </div>
+                 <p>
+                    2023
+                 </p>
         </footer>
     </>)
 }
